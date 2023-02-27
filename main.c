@@ -11,7 +11,7 @@ unsigned char c;
 static __IO uint32_t msTicks;
 void DelayMs(uint32_t ms);
 void readFloor();
-int state = 1;
+int roadState = 1;
 
 void SystemInit(){
     // Update SystemCoreClock value
@@ -216,16 +216,16 @@ int main(void)
         // DelayMs(3);
         // GPIO_WriteBit(GPIOA, GPIO_Pin_4, Bit_SET);
         // DelayMs(3);
-        switch(state){
+        switch(roadState){
             case 1:
-                if(state == 1)
+                if(roadState == 1)
                 {
                     wheelControl(100,100);
                     state++;
                 }
                 break;
             case 2:
-                if (state == 2)
+                if (roadState == 2)
                 {
                     wheelControl(0,0);
                     state++;
